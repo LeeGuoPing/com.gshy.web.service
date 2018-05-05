@@ -31,7 +31,7 @@ public class Employee {
 	private Date updateTime;
 	
 	@Column(name="valid")
-	private int valid; // -1 逻辑删除;默认为1
+	private int valid; // -1 逻辑删除;默认为0
 
 	public long getId() {
 		return id;
