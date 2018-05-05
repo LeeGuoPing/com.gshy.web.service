@@ -3,4 +3,11 @@
   <groupId>com.gshy.web</groupId>
   <artifactId>com.gshy.web.service</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+  <dependencies>
+  	<dependency>
+  		<groupId>com.bj58.ycs</groupId>
+  		<artifactId>com.bj58.ycs.tool.webutil</artifactId>
+  		<version>0.0.1-SNAPSHOT</version>
+  	</dependency>
+  </dependencies>
 </project>
