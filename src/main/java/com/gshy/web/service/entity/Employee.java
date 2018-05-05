@@ -2,22 +2,35 @@ package com.gshy.web.service.entity;
 
 import java.util.Date;
 
+import com.darengong.tools.dao.annotation.Column;
+import com.darengong.tools.dao.annotation.Id;
+import com.darengong.tools.dao.annotation.Table;
+
+@Table(name="tbl_employee")
 public class Employee {
 	
+	@Id
 	private long id;
 	
-	private String useName;
+	@Column(name="user_name")
+	private String userName;
 	
+	@Column(name="phone")
 	private String phone;
 	
+	@Column(name="email")
 	private String email;
 	
+	@Column(name="password")
 	private String password;
 	
+	@Column(name="add_time")
 	private Date addTime;
 	
+	@Column(name="update_time")
 	private Date updateTime;
 	
+	@Column(name="valid")
 	private int valid; // -1 逻辑删除;默认为1
 
 	public long getId() {
@@ -28,12 +41,12 @@ public class Employee {
 		this.id = id;
 	}
 
-	public String getUseName() {
-		return useName;
+	public String getUserName() {
+		return userName;
 	}
 
-	public void setUseName(String useName) {
-		this.useName = useName;
+	public void setUserName(String userName) {
+		this.userName = userName;
 	}
 
 	public String getEmail() {

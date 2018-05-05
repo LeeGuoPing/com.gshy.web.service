@@ -9,6 +9,7 @@ import com.darengong.tools.dao.v2.DAOHelperV2;
 import com.gshy.web.service.utils.PathUtil;
 
 
+
 /**
  * 功能：创建DAOHelperV2
  * 作者：王鑫
@@ -21,19 +22,18 @@ public abstract class DAOHelper {
 	public static DAOHelperV2 daoHelper = null;
 
 	static {
-		initDAOHelper(PathUtil.getConfigFolderPath());
+		initDAOHelper(PathUtil.getAbsoluteConfigPath() + File.separatorChar + "car.properties");
 	}
 
-	private static void initDAOHelper(String rootPath) {
-		log.info("config path:" + rootPath);
-		String carPath = rootPath + "/car.properties";
-		System.out.println("财务DAO PATH:"+carPath);
+	private static void initDAOHelper(String carPath) {
+		System.out.println("PATH:"+carPath);
 		try {
 			File carDB = new File(carPath);
-			log.info("1config path:" + carPath);
+			System.out.println(carDB.exists());
 			if (carDB.exists()) {
 				log.info("3config path:" + carPath);
 				daoHelper = DAOHelperV2.createIntrance(carPath);
+				System.out.println("daoHelper: "+daoHelper);
 			}
 			log.info("2config path:" + daoHelper);
 		} catch (Exception e) {

@@ -19,8 +19,7 @@ public class EmployeeBLL {
 			return null;
 		}
 		DBQuery dbQuery = new DBQuery();
-		dbQuery.select().from("tbl_employee")
-		.where().column("email").equal(email);
+		dbQuery.column("email").equal(email);
 		return employeeDAO.getOne(dbQuery);
 	}
 }
