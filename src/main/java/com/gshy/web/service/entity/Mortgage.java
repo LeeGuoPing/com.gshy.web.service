@@ -15,7 +15,7 @@ import com.darengong.tools.dao.annotation.Table;
  * @function 房抵资料报送
  */
 @Table(name="tbl_mortgage")
-public class Mortgage {
+public class Mortgage implements AuditInterface{
 	
 	@Id
 	private long id;

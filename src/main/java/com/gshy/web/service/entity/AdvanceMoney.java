@@ -16,7 +16,7 @@ import com.darengong.tools.dao.annotation.Table;
  */
 
 @Table(name="tbl_advance_money")
-public class AdvanceMoney {
+public class AdvanceMoney implements AuditInterface{
 	
     @Id
 	private long id;
