@@ -48,89 +48,89 @@ public class AdvanceMoneyQuery {
 		return pageSize;
 	}
 	
-	public static class MortgageQueryBuilder{
+	public static class AdvanceMoneyQueryBuilder{
 		AdvanceMoneyQuery query = new AdvanceMoneyQuery();
 		
-		protected MortgageQueryBuilder() {
+		protected AdvanceMoneyQueryBuilder() {
 			query.advanceIds = new ArrayList<Long>();
 			query.auditStates = new ArrayList<Integer>();
 		}
 		
-		public static MortgageQueryBuilder builder(){
-			return new MortgageQueryBuilder();
+		public static AdvanceMoneyQueryBuilder builder(){
+			return new AdvanceMoneyQueryBuilder();
 		}
 		
-		public MortgageQueryBuilder addAdvanceId(long advanceId){
+		public AdvanceMoneyQueryBuilder addAdvanceId(long advanceId){
 			if(advanceId>0){
 				query.advanceIds.add(advanceId);
 			}
 			return this;
 		}
 		
-		public MortgageQueryBuilder addAdvanceIds(List<Long> advanceIds){
+		public AdvanceMoneyQueryBuilder addAdvanceIds(List<Long> advanceIds){
 			if(Objects.nonNull(advanceIds)){
 				query.advanceIds.addAll(advanceIds);
 			}
 			return this;
 		}
 		
-		public MortgageQueryBuilder addCreateEmp(long createEmp){
+		public AdvanceMoneyQueryBuilder addCreateEmp(long createEmp){
 			if(createEmp>0){
 				query.createEmp.add(createEmp);
 			}
 			return this;
 		}
 		
-		public MortgageQueryBuilder addCreateEmps(List<Long> createEmps){
+		public AdvanceMoneyQueryBuilder addCreateEmps(List<Long> createEmps){
 			if(Objects.nonNull(createEmps)){
 				query.createEmp.addAll(createEmps);
 			}
 			return this;
 		} 
 		
-		public MortgageQueryBuilder addAuditEmp(long auditEmp){
+		public AdvanceMoneyQueryBuilder addAuditEmp(long auditEmp){
 			if(auditEmp>0){
 				query.auditEmp.add(auditEmp);
 			}
 			return this;
 		} 
 		
-		public MortgageQueryBuilder addAuditEmps(List<Long> auditEmp){
+		public AdvanceMoneyQueryBuilder addAuditEmps(List<Long> auditEmp){
 			if(Objects.nonNull(auditEmp)){
 				query.auditEmp.addAll(auditEmp);
 			}
 			return this;
 		} 
 		
-		public MortgageQueryBuilder addAuditState(int auditState){
+		public AdvanceMoneyQueryBuilder addAuditState(int auditState){
 			if(auditState>0){
 				query.auditStates.add(auditState);
 			}
 			return this;
 		}
 		
-		public MortgageQueryBuilder addAuditStates(List<Integer> auditStates){
+		public AdvanceMoneyQueryBuilder addAuditStates(List<Integer> auditStates){
 			if(Objects.nonNull(auditStates)){
 				query.auditStates.addAll(auditStates);
 			}
 			return this;
 		}
 		
-		public MortgageQueryBuilder setOrderBy(String orderBy) {
+		public AdvanceMoneyQueryBuilder setOrderBy(String orderBy) {
 			if (!Objects.isNull(orderBy) && !"".equals(orderBy)) {
 				query.orderBy = orderBy;
 			}
 			return this;
 		}
 		
-		public MortgageQueryBuilder setPage(int page) {
+		public AdvanceMoneyQueryBuilder setPage(int page) {
 			if (!Objects.isNull(page) && page != 0) {
 				query.page = page;
 			}
 			return this;
 		}
 		
-		public MortgageQueryBuilder setPageSize(int pageSize) {
+		public AdvanceMoneyQueryBuilder setPageSize(int pageSize) {
 			if (!Objects.isNull(pageSize) && pageSize != 0) {
 				query.pageSize = pageSize;
 			}
