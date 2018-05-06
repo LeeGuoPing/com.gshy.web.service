@@ -8,9 +8,9 @@ public class AdvanceMoneyQuery {
 	
 	private List<Long> advanceIds;
 	
-	private long createEmp;
+	private List<Long> createEmp;
 	
-	private long auditEmp;
+	private List<Long> auditEmp;
 	
 	private List<Integer> auditStates;
 	
@@ -20,11 +20,11 @@ public class AdvanceMoneyQuery {
 	
 	private int pageSize;
 
-	public long getCreateEmp() {
+	public List<Long> getCreateEmp() {
 		return createEmp;
 	}
 
-	public long getAuditEmp() {
+	public List<Long> getAuditEmp() {
 		return auditEmp;
 	}
 
@@ -76,14 +76,28 @@ public class AdvanceMoneyQuery {
 		
 		public MortgageQueryBuilder addCreateEmp(long createEmp){
 			if(createEmp>0){
-				query.createEmp = createEmp;
+				query.createEmp.add(createEmp);
+			}
+			return this;
+		}
+		
+		public MortgageQueryBuilder addCreateEmps(List<Long> createEmps){
+			if(Objects.nonNull(createEmps)){
+				query.createEmp.addAll(createEmps);
 			}
 			return this;
 		} 
 		
 		public MortgageQueryBuilder addAuditEmp(long auditEmp){
 			if(auditEmp>0){
-				query.auditEmp = auditEmp;
+				query.auditEmp.add(auditEmp);
+			}
+			return this;
+		} 
+		
+		public MortgageQueryBuilder addAuditEmps(List<Long> auditEmp){
+			if(Objects.nonNull(auditEmp)){
+				query.auditEmp.addAll(auditEmp);
 			}
 			return this;
 		} 

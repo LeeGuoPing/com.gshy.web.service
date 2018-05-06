@@ -6,12 +6,9 @@ import org.apache.commons.lang3.StringUtils;
 
 import com.darengong.tools.dao.v2.DBQuery;
 import com.darengong.tools.dao.v2.KeyValueParis;
-import com.gshy.web.service.dao.EmployeeDAO;
 import com.gshy.web.service.entity.Employee;
 
-public class EmployeeBLL {
-	
-	private static final EmployeeDAO employeeDAO = EmployeeDAO.getInstance();
+public class EmployeeBLL extends BaseBLL{
 	
 	public long addEmployee(Employee employee) throws Exception{
 		return employeeDAO.add(employee);

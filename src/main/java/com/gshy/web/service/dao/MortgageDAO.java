@@ -32,20 +32,17 @@ public class MortgageDAO extends BaseDAO<Mortgage>{
 	} 
 
 	private DBQuery toDBQuery(MortgageQuery query,boolean usePage) throws Exception {
-		long auditEmp = query.getAuditEmp();
-		long createEmp = query.getCreateEmp();
 		
 		DBQuery dbQuery = getUnitDBQuery(query,usePage);
 		dbQuery.where();
+		
 		queryWithList(dbQuery, query.getAuditStates(), "audit_state");
 		queryWithList(dbQuery, query.getMortgageIds(), "id");
 		queryWithList(dbQuery, query.getSituations(), "situation");
-		if(auditEmp>0){
-			dbQuery.and().column("audit_emp").equal(auditEmp);
-		}
-		if(createEmp>0){
-			dbQuery.and().column("create_emp").equal(createEmp);
-		}
+		queryWithList(dbQuery, query.getCreateEmp(), "create_emp");
+		queryWithList(dbQuery, query.getAuditEmp(), "create_emp");
+		
+		dbQuery.column("valid").equal(0);
 		if (!Objects.isNull(query.getOrderBy())) {
 			dbQuery.orderBy(query.getOrderBy());
 		}
@@ -55,6 +52,7 @@ public class MortgageDAO extends BaseDAO<Mortgage>{
 			int size = query.getPageSize();
 			dbQuery.limit(start, size);
 		}
+		System.out.println(dbQuery.toSql()+"  : "+dbQuery.values());
 		return dbQuery;
 	}
 	
@@ -63,7 +61,7 @@ public class MortgageDAO extends BaseDAO<Mortgage>{
 		if (usePage) {
 			dbQuery.distinct("id");
 		} else {
-			dbQuery.select("count(distinct id)");
+			dbQuery.select("count(id)");
 		}
 
 		dbQuery.from("tbl_mortgage");
