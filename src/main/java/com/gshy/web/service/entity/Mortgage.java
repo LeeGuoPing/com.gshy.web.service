@@ -22,6 +22,9 @@ public class Mortgage implements AuditInterface{
 
 	@Column(name = "situation")
 	private int situation; // 抵押情况 1,一抵;2 二抵'
+	
+	@Column(name = "authority")
+	private String authority; // 抵押权
 
 	@Column(name = "first_balance")
 	private double firstBalance; // 一抵余额
