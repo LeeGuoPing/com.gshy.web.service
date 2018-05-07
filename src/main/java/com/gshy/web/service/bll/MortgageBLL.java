@@ -35,4 +35,9 @@ public class MortgageBLL extends BaseBLL{
 		
 	}
 
+	public long insert(Mortgage mortgage) throws Exception {
+		return mortgageDAO.add(mortgage);
+		
+	}
+
 }

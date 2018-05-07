@@ -34,4 +34,8 @@ public class AdvanceMoneyBLL extends BaseBLL{
 		
 	}
 
+	public long insert(AdvanceMoney ad) throws Exception {
+		return advanceMoneyDAO.add(ad);
+	}
+
 }
