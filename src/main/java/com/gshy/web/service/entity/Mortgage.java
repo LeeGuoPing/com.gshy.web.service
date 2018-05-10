@@ -151,6 +151,15 @@ public class Mortgage implements AuditInterface{
 	public void setRemark(String remark) {
 		this.remark = remark;
 	}
+
+	public String getAuthority() {
+		return authority;
+	}
+
+	public void setAuthority(String authority) {
+		this.authority = authority;
+	}
+	
 	
 	
 }
