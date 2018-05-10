@@ -1,6 +1,7 @@
 package com.gshy.web.service.bll;
 
 import java.util.Date;
+import java.util.List;
 
 import org.apache.commons.lang3.StringUtils;
 
@@ -41,5 +42,9 @@ public class EmployeeBLL extends BaseBLL{
 		kv.add("update_time", new Date());
 		employeeDAO.update(kv, empId);
 		
+	}
+	
+	public List<Employee> getAllEmployee() throws Exception{
+		return employeeDAO.getAllEmployee();
 	}
 }
