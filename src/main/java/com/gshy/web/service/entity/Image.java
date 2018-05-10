@@ -24,6 +24,9 @@ public class Image {
 	@Column(name="url")
 	private String url;
 	
+	@Column(name="source_id")
+	private long sourceId;
+	
 	@Column(name="valid")
 	private int valid;
 	
@@ -69,6 +72,16 @@ public class Image {
 	public void setRemark(String remark) {
 		this.remark = remark;
 	}
+
+	public long getSourceId() {
+		return sourceId;
+	}
+
+	public void setSourceId(long sourceId) {
+		this.sourceId = sourceId;
+	}
+	
+	
 	
 	
 }
