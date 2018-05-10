@@ -59,7 +59,7 @@ public class MortgageDAO extends BaseDAO<Mortgage>{
 	private DBQuery getUnitDBQuery(MortgageQuery query, boolean usePage) throws Exception {
 		DBQuery dbQuery = new DBQuery();
 		if (usePage) {
-			dbQuery.distinct("id");
+			dbQuery.distinct("*");
 		} else {
 			dbQuery.select("count(id)");
 		}
