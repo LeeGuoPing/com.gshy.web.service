@@ -3,6 +3,7 @@ package com.gshy.web.service.dao;
 import java.util.List;
 import java.util.Objects;
 
+import com.bj58.wf.log.Log;
 import com.darengong.tools.dao.v2.DBQuery;
 import com.gshy.web.service.dao.base.BaseDAO;
 import com.gshy.web.service.entity.Mortgage;
@@ -11,6 +12,8 @@ import com.gshy.web.service.query.MortgageQuery;
 public class MortgageDAO extends BaseDAO<Mortgage>{
 	
 	private static final MortgageDAO mortgageDAO = new MortgageDAO();
+	
+	protected Log log = com.bj58.wf.log.LogFactory.getLog(MortgageDAO.class);
 	
 	
 	public static MortgageDAO getInstance(){
@@ -53,7 +56,7 @@ public class MortgageDAO extends BaseDAO<Mortgage>{
 			int size = query.getPageSize();
 			dbQuery.limit(start, size);
 		}
-		System.out.println(dbQuery.toSql()+"  : "+dbQuery.values());
+		log.info(dbQuery.toSql()+"  : "+dbQuery.values());
 		return dbQuery;
 	}
 	

@@ -3,6 +3,7 @@ package com.gshy.web.service.dao;
 import java.util.List;
 import java.util.Objects;
 
+import com.bj58.wf.log.Log;
 import com.darengong.tools.dao.v2.DBQuery;
 import com.gshy.web.service.dao.base.BaseDAO;
 import com.gshy.web.service.entity.AdvanceMoney;
@@ -11,6 +12,8 @@ import com.gshy.web.service.query.AdvanceMoneyQuery;
 public class AdvanceMoneyDAO extends BaseDAO<AdvanceMoney>{
 	
 	private static final AdvanceMoneyDAO advanceMoneyDAO = new AdvanceMoneyDAO();
+	
+	protected Log log = com.bj58.wf.log.LogFactory.getLog(AdvanceMoneyDAO.class);
 	
 	public static AdvanceMoneyDAO getInstance(){
 		return advanceMoneyDAO;
@@ -52,6 +55,7 @@ public class AdvanceMoneyDAO extends BaseDAO<AdvanceMoney>{
 			int size = query.getPageSize();
 			dbQuery.limit(start, size);
 		}
+		log.info("dbQuery is {}" + dbQuery.toString());
 		return dbQuery;
 	}
 	
@@ -64,7 +68,7 @@ public class AdvanceMoneyDAO extends BaseDAO<AdvanceMoney>{
 		}
 
 		dbQuery.from("tbl_advance_money");
-
+		
 		return dbQuery;
 	}
 
