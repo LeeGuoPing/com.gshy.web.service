@@ -40,6 +40,8 @@ public class AdvanceMoneyDAO extends BaseDAO<AdvanceMoney>{
 		queryWithList(dbQuery, query.getAuditStates(), "audit_state");
 		queryWithList(dbQuery, query.getCreateEmp(), "create_emp");
 		queryWithList(dbQuery, query.getAuditEmp(), "create_emp");
+		queryWithDateRange(dbQuery,query.getCreatTime(),"create_time");
+		queryWithDateRange(dbQuery, query.getAuditTime(), "audit_time");
 		dbQuery.column("valid").equal(0);
 		if (!Objects.isNull(query.getOrderBy())) {
 			dbQuery.orderBy(query.getOrderBy());

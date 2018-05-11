@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+import com.bj58.ycs.tool.webutil.query.DateRange;
+
 public class AdvanceMoneyQuery {
 	
 	private List<Long> advanceIds;
@@ -13,6 +15,10 @@ public class AdvanceMoneyQuery {
 	private List<Long> auditEmp;
 	
 	private List<Integer> auditStates;
+	
+	private DateRange auditTime;
+	
+	private DateRange creatTime;
 	
 	private String orderBy;
 	
@@ -38,6 +44,14 @@ public class AdvanceMoneyQuery {
 
 	public String getOrderBy() {
 		return orderBy;
+	}
+	
+	public DateRange getAuditTime() {
+		return auditTime;
+	}
+
+	public DateRange getCreatTime() {
+		return creatTime;
 	}
 
 	public int getPage() {
@@ -112,6 +126,20 @@ public class AdvanceMoneyQuery {
 		public AdvanceMoneyQueryBuilder addAuditStates(List<Integer> auditStates){
 			if(Objects.nonNull(auditStates)){
 				query.auditStates.addAll(auditStates);
+			}
+			return this;
+		}
+		
+		public AdvanceMoneyQueryBuilder addCreateTime(DateRange createTime){
+			if(Objects.nonNull(createTime)){
+				query.creatTime=createTime;
+			}
+			return this;
+		}
+		
+		public AdvanceMoneyQueryBuilder addAuditTime(DateRange auditTime){
+			if(Objects.nonNull(auditTime)){
+				query.auditTime = auditTime; 
 			}
 			return this;
 		}

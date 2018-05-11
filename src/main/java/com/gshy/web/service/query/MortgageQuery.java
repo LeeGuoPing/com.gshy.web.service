@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+import com.bj58.ycs.tool.webutil.query.DateRange;
+
 public class MortgageQuery {
 	
 	private List<Long> mortgageIds;
@@ -15,6 +17,10 @@ public class MortgageQuery {
 	private List<Long> auditEmp;
 	
 	private List<Integer> auditStates;
+	
+	private DateRange createTime;
+	
+	private DateRange auditTime;
 	
 	private String orderBy;
 	
@@ -53,7 +59,15 @@ public class MortgageQuery {
 	public int getPageSize() {
 		return pageSize;
 	}
-	
+
+	public DateRange getAuditTime() {
+		return auditTime;
+	}
+
+	public DateRange getCreateTime() {
+		return createTime;
+	}
+
 	public static class MortgageQueryBuilder{
 		MortgageQuery query = new MortgageQuery();
 		
@@ -156,6 +170,20 @@ public class MortgageQuery {
 		public MortgageQueryBuilder setPageSize(int pageSize) {
 			if (!Objects.isNull(pageSize) && pageSize != 0) {
 				query.pageSize = pageSize;
+			}
+			return this;
+		}
+		
+		public MortgageQueryBuilder setAuditTime(DateRange auditTime) {
+			if (!Objects.isNull(auditTime)) {
+				query.auditTime = auditTime;
+			}
+			return this;
+		}
+		
+		public MortgageQueryBuilder setCreateTime(DateRange createTime) {
+			if (!Objects.isNull(createTime)) {
+				query.createTime = createTime;
 			}
 			return this;
 		}

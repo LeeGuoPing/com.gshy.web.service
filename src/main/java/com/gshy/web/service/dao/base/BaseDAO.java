@@ -93,4 +93,18 @@ public class BaseDAO<T> extends DAOHelper implements IDAO<T> {
 		}
 	}
 	
+	public void queryWithDateRange(DBQuery query, com.bj58.ycs.tool.webutil.query.DateRange range, String column) throws Exception {
+		if (!Objects.isNull(range)) {
+			query.column(column);
+			if (range.getBegin()!=null && range.getEnd()!=null) {
+				query.between(range.getBegin(), range.getEnd());
+			} else if (range.getBegin()==null && range.getEnd()!=null) {
+				query.lessOrEqual(range.getEnd());
+			} else if(range.getBegin()!=null && range.getEnd()==null){
+				query.greaterOrEqual(range.getBegin());
+			}
+			query.and();
+		}
+	}
+	
 }

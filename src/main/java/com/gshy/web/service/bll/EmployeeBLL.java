@@ -20,8 +20,7 @@ public class EmployeeBLL extends BaseBLL{
 			return null;
 		}
 		DBQuery dbQuery = new DBQuery();
-		dbQuery.column("email").equal(email)
-		.and().column("valid").equal(1);
+		dbQuery.column("email").equal(email);
 		return employeeDAO.getOne(dbQuery);
 	}
 	
@@ -46,5 +45,11 @@ public class EmployeeBLL extends BaseBLL{
 	
 	public List<Employee> getAllEmployee() throws Exception{
 		return employeeDAO.getAllEmployee();
+	}
+
+	public Employee getByName(String createName) throws Exception {
+		DBQuery dbQuery = new DBQuery();
+		dbQuery.column("user_name").like("%"+createName+"%");
+		return employeeDAO.getOne(dbQuery);
 	}
 }
