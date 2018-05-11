@@ -46,6 +46,10 @@ public class EmployeeBLL extends BaseBLL{
 	public List<Employee> getAllEmployee() throws Exception{
 		return employeeDAO.getAllEmployee();
 	}
+	
+	public List<Employee> getAllEmployeeValid() throws Exception {
+		return employeeDAO.getAllEmployeeValid();
+	}
 
 	public Employee getByName(String createName) throws Exception {
 		DBQuery dbQuery = new DBQuery();

@@ -22,6 +22,12 @@ public class EmployeeDAO extends BaseDAO<Employee>{
 	public List<Employee> getAllEmployee() throws Exception{
 		DBQuery dbQuery = new DBQuery();
 		dbQuery.select().from("tbl_employee");
+		return daoHelper.selectByQuery(clazz, dbQuery);
+	}
+	
+	public List<Employee> getAllEmployeeValid() throws Exception{
+		DBQuery dbQuery = new DBQuery();
+		dbQuery.select().from("tbl_employee");
 		dbQuery.where();
 		dbQuery.column("valid").equal("0");
 		return daoHelper.selectByQuery(clazz, dbQuery);
