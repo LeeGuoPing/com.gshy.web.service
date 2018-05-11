@@ -7,7 +7,6 @@ import org.junit.Test;
 import com.alibaba.fastjson.JSON;
 import com.gshy.web.service.bll.MortgageBLL;
 import com.gshy.web.service.entity.Mortgage;
-import com.gshy.web.service.query.MortgageQuery;
 import com.gshy.web.service.query.MortgageQuery.MortgageQueryBuilder;
 
 public class MortgageTest {
