@@ -7,8 +7,8 @@ import java.util.List;
 import java.util.Map;
 
 public enum ImageTypeEnum {
-	AdvanceMoney(1, "待审核"), 
-	Mortgage(2, "审核通过");
+	AdvanceMoney(1, "垫资"), 
+	Mortgage(2, "房抵");
 	
 	private int value;
 	private String name;
