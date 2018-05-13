@@ -38,7 +38,7 @@ public class LoginInterceptor implements ActionInterceptor {
 					}
 				}
 			}
-			
+			return ActionResult.redirect("/login");
 		} catch (Exception e) {
 			this.log.error("update frist ssoinfo : " + e);
 		}
