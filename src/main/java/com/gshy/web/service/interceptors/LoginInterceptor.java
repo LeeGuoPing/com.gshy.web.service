@@ -38,9 +38,10 @@ public class LoginInterceptor implements ActionInterceptor {
 					}
 				}
 			}
-			return ActionResult.redirect("/login");
+			
+			return ActionResult.redirect("http://admin.haoyejinfu.com:8088/login");
 		} catch (Exception e) {
-			this.log.error("update frist ssoinfo : " + e);
+			e.printStackTrace();
 		}
 		return new ActionResult4Javascript("alert(\"无法判断的情形！\");history.go(-1);");
 	}
