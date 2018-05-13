@@ -26,8 +26,10 @@ public class LoginInterceptor implements ActionInterceptor {
 		try {
 			HttpServletRequest request = beat.getRequest();
 			Cookie[] cookies = request.getCookies();
+			System.out.println("cookie size: "+cookies.length);
 			if(cookies!=null){
 				for (Cookie cookie : cookies) {
+					System.out.println("cookie name: "+cookie.getName());
 					if("uid".equals(cookie.getName())){
 						String uid = cookie.getValue();
 						long userId = Long.parseLong(uid);
