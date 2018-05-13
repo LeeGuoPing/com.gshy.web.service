@@ -68,6 +68,8 @@ public class AdvanceMoneyQuery {
 		protected AdvanceMoneyQueryBuilder() {
 			query.advanceIds = new ArrayList<Long>();
 			query.auditStates = new ArrayList<Integer>();
+			query.createEmp = new ArrayList<Long>();
+			query.auditEmp = new ArrayList<Long>();
 		}
 		
 		public static AdvanceMoneyQueryBuilder builder(){
