@@ -39,7 +39,7 @@ public class LoginInterceptor implements ActionInterceptor {
 				}
 			}
 			
-			return ActionResult.redirect("http://admin.haoyejinfu.com:8088/login");
+			return ActionResult.redirect("https://www.haoyejinfu.com/admin/login");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
