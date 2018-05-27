@@ -21,15 +21,17 @@ public class AdvanceMoneyBLL extends BaseBLL{
 		return advanceMoneyDAO.getOne(id);
 	}
 
-	public void pass(long id) throws Exception {
+	public void pass(long id,long auditEmp) throws Exception {
 		KeyValueParis kv = new KeyValueParis();
 		kv.add("audit_state", AuditStatusEnum.AuditSuccess.getValue());
+		kv.add("audit_emp", auditEmp);
 		advanceMoneyDAO.update(kv, id);
 	}
 
-	public void fail(long id) throws Exception {
+	public void fail(long id,long auditEmp) throws Exception {
 		KeyValueParis kv = new KeyValueParis();
 		kv.add("audit_state", AuditStatusEnum.AuditFail.getValue());
+		kv.add("audit_emp", auditEmp);
 		advanceMoneyDAO.update(kv, id);
 		
 	}
