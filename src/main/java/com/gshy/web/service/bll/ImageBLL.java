@@ -17,6 +17,7 @@ public class ImageBLL extends BaseBLL{
 			Image image = new Image();
 			image.setType(imageType);
 			image.setUrl(url);
+			image.setSourceId(id);
 			images.add(image);
 		}
 		imageDAO.add(images);
