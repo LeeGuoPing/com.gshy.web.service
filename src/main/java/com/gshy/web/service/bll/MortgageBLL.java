@@ -1,5 +1,6 @@
 package com.gshy.web.service.bll;
 
+import java.util.Date;
 import java.util.List;
 
 import com.darengong.tools.dao.v2.KeyValueParis;
@@ -26,6 +27,7 @@ public class MortgageBLL extends BaseBLL{
 		KeyValueParis kv = new KeyValueParis();
 		kv.add("audit_state", AuditStatusEnum.AuditSuccess.getValue());
 		kv.add("audit_emp", auditEmp);
+		kv.add("audit_time", new Date());
 		mortgageDAO.update(kv, id);
 	}
 
@@ -33,6 +35,7 @@ public class MortgageBLL extends BaseBLL{
 		KeyValueParis kv = new KeyValueParis();
 		kv.add("audit_state", AuditStatusEnum.AuditFail.getValue());
 		kv.add("audit_emp", auditEmp);
+		kv.add("audit_time", new Date());
 		mortgageDAO.update(kv, id);
 		
 	}
