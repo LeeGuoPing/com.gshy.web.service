@@ -20,7 +20,8 @@ public class EmployeeBLL extends BaseBLL{
 			return null;
 		}
 		DBQuery dbQuery = new DBQuery();
-		dbQuery.column("email").equal(email);
+		dbQuery.column("email").equal(email)
+		.and().column("valid").equal(0);
 		return employeeDAO.getOne(dbQuery);
 	}
 	
