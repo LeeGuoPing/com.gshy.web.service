@@ -1,10 +1,12 @@
 package com.gshy.web.service.utils;
 
+import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
+
 
 public class FileUtils {
 
@@ -55,6 +57,17 @@ public class FileUtils {
 		int len = 0;
 		FileOutputStream fileOutputStream = null;
 		try {
+			File file = new File(picPath);
+			if(!file.exists()){
+				file.setWritable(true, false);
+				file.mkdirs();
+			}
+			File pic = new File(picPath + picName + ".jpg");
+			if(!pic.exists()){
+				pic.setWritable(true, false);
+				file.createNewFile();
+			}
+			
 			fileOutputStream = new FileOutputStream(picPath + picName + ".jpg");
 			while ((len = inputStream.read(data)) != -1) {
 				fileOutputStream.write(data, 0, len);
