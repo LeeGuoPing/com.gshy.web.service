@@ -31,8 +31,7 @@ public class ImageBLL extends BaseBLL{
 	
 	public List<Image> getByType(int type,long sourceId) throws Exception{
 		DBQuery dbQuery = new DBQuery();
-		dbQuery.select().from("tbl_image")
-		.where().column("type").equal(type)
+		dbQuery.column("type").equal(type)
 		.and().column("source_id").equal(sourceId);
 		return imageDAO.getList(dbQuery, 1, 100, "id desc");
 	}
